@@ -1,5 +1,4 @@
-# Open Source Business Application
-Demo application with **[Spring Boot](https://projects.spring.io/spring-boot/)** and **[Eclipse Scout](http://www.eclipse.org/scout/) UI**
+# Scout Boot - Open Source Business Application <img src="https://travis-ci.org/boardend/SpringBoot-and-EclipseScout.svg">
 
 **Please Note**: This is work in progress and has not (yet) been tested for productive usage.
 
