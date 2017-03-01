@@ -1,0 +1,9 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: hystrix-dashbaord
+
+turbine:
+  clusterNameExpression: new String("default")
+  appConfig: tasks-api,tasks-gateway,tasks-service

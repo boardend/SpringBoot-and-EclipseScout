@@ -1,0 +1,16 @@
+server:
+    session:
+        cookie:
+            http-only: true
+            secure: false
+        timeout: 60
+spring:
+    datasource:
+        url: jdbc:h2:file:~/tasksdb # Setting file persistence for h2 (creates a tasksdb.mv.db in your home directory)
+        username: sa
+    h2:
+        console:
+            enabled: true # Access the console with http://localhost:8080/h2-console
+    jpa:
+        hibernate:
+            ddl-auto: create-drop # Default value in spring boot is spring.jpa.hibernate.ddl-auto=create-drop (change to update if content is to be kept between runs)

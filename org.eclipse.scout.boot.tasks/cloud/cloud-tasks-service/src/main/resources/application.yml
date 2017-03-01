@@ -1,0 +1,13 @@
+server:
+  port: 9300
+spring:
+  application:
+    name: tasks-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+    metadata-map:
+      management.port: ${management.port:9300}
