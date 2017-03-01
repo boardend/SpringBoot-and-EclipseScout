@@ -49,10 +49,10 @@ Users with the root role may also add/change roles and defining its associted pe
 * Authorization and authentication (for UI)
 * User interface for tasks and admin
 * REST API (readonly, no authentication so far)
-
-## Roadmap
 * Add authentication for REST services
 * Add tests and Travis CI
+
+## Roadmap
 * Dockerize application with multi-container setup: Data, DB, Application
 * Use PostgreSQL for realistic setup
 * Create Maven artefact based on this application
