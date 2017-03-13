@@ -31,6 +31,47 @@ Users with the root role may also add/change roles and defining its associted pe
 
 ![Edit Roles](/screenshots/ui_edit_role.png)
 
+## Docker Setup
+
+In order to run the application using docker you first have to build a suitable docker image. You can accomplish this using the maven integration by executing the "docker:build" goal from the project's root directory:
+<pre>
+$ mvn install docker:build
+</pre>
+When the build is finished the docker image will have been created in the context of your locally running docker daemon:
+<pre>
+$ docker images
+REPOSITORY  TAG                        IMAGE ID        CREATED             SIZE
+tasks       standalone_0.1.0-SNAPSHOT  12b5ccbd8a51    About an hour ago   690 MB
+</pre>
+
+### Launch using the built-in h2 database
+
+In order to launch the application and access it with your browser you have to bind the container port 8080 to a free port of one of your local interfaces:
+<pre>
+$ docker run -d -p 8080:8080 tasks:standalone_0.1.0-SNAPSHOT
+</pre>
+Now you can access the application as mentioned before at http://localhost:8080 from your browser. The container will use a h2 database living inside of the container, which means your data will survive container restarts but will be gone as soon as you remove the container. In order to keep the data even if you remove the container you have to create a volume and mount it at the appropriate location:
+<pre>
+$ docker volume create tasks_data
+$ docker run -d -p 8080:8080 -v tasks_data:/root tasks:standalone_0.1.0-SNAPSHOT
+</pre>
+
+### Launch with an external database using docker-compose
+
+In order to launch the application an have it run against an external database (postgres in this case) you can use the provided docker-compose.yaml file. From the project's root directory issue the following commands:
+<pre>
+$ cd org.eclipse.scout.boot.tasks/standalone
+$ docker-compose up -d
+</pre>
+This will yield the following:
+
+* Spin up a PostgreSQL database container using the official postgres image.
+* Spin up the application container as before except that it does no longer use the built in h2 database.
+* Both containers will be linked with a network called "standalone_tasks".
+* The PostgreSQL container will write its data into a volume called "standalone_pgdata".
+* The application container will listen on port 8080 on all local interfaces.
+* The PostgreSQL container will not bind to any interfaces and will therefore just be reachable through the mentioned docker network.
+
 ## Technologies per Component
 * Main frameworks: Spring Boot and Eclipse Scout
 * Authentication and authorization: Servlet filters, java.security, Eclipse Scout
@@ -50,11 +91,12 @@ Users with the root role may also add/change roles and defining its associted pe
 * REST API (readonly, no authentication so far)
 * Add authentication for REST services
 * Add tests and Travis CI
-
-## Roadmap
 * Dockerize application with multi-container setup: Data, DB, Application
 * Use PostgreSQL for realistic setup
-* Create Maven artefact based on this application
+
+## Roadmap
+* Create Maven archetype based on this application
 * Add user signup functionaliy (+ password reset by email)
 
 View [README](org.eclipse.scout.springboot/README.md) for more information
+

@@ -13,4 +13,5 @@ spring:
             enabled: true # Access the console with http://localhost:8080/h2-console
     jpa:
         hibernate:
-            ddl-auto: create-drop # Default value in spring boot is spring.jpa.hibernate.ddl-auto=create-drop (change to update if content is to be kept between runs)
+            ddl-auto: update # Default value in spring boot is spring.jpa.hibernate.ddl-auto=create-drop (change to update if content is to be kept between runs)
+

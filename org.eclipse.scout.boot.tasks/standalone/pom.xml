@@ -16,6 +16,7 @@
 
 	<properties>
 		<modelmapper.version>0.7.5</modelmapper.version>
+		<postgresql.version>42.0.0</postgresql.version>
 	</properties>
 
 	<dependencies>
@@ -59,6 +60,12 @@
 			<version>${scout.boot.version}</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -85,6 +92,21 @@
 				<configuration>
 					<excludeDevtools>true</excludeDevtools>
 					<excludeArtifactIds>scout-boot-ui-dev</excludeArtifactIds>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<configuration>
+					<images>
+						<image>
+							<name>tasks:standalone_${project.version}</name>
+							<alias>tasks</alias>
+							<build>
+								<dockerFileDir>${project.basedir}</dockerFileDir>
+							</build>
+						</image>
+					</images>
 				</configuration>
 			</plugin>
 		</plugins>
