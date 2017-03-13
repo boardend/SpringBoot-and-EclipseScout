@@ -18,6 +18,7 @@
 		<module>scout-boot-platform</module>
 		<module>scout-boot-ui</module>
 		<module>scout-boot-ui-dev</module>
+		<module>archetype/scout-boot-archetype-minimal</module>
 	</modules>
 
 </project>
