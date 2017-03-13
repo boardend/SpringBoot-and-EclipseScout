@@ -1,6 +1,6 @@
 package org.eclipse.scout.boot.tasks.commons.ui.admin.db;
 
-import org.eclipse.scout.boot.ui.widgets.BrowserFieldBorderless;
+import org.eclipse.scout.boot.ui.commons.widgets.BrowserFieldBorderless;
 import org.eclipse.scout.rt.client.context.ClientRunContexts;
 import org.eclipse.scout.rt.client.job.ModelJobs;
 import org.eclipse.scout.rt.client.ui.desktop.IDesktop;

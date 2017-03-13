@@ -3,7 +3,7 @@ package org.eclipse.scout.boot.tasks.standalone.spring;
 import javax.servlet.ServletContextListener;
 
 import org.eclipse.scout.boot.tasks.standalone.spring.security.ScoutJaasApiIntegrationFilter;
-import org.eclipse.scout.boot.ui.ScoutBootWebappListener;
+import org.eclipse.scout.boot.ui.spring.ScoutBootWebappListener;
 import org.eclipse.scout.rt.server.commons.HttpSessionMutex;
 import org.eclipse.scout.rt.ui.html.UiServlet;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;

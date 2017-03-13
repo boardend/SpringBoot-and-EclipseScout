@@ -1,4 +1,4 @@
-package org.eclipse.scout.boot.ui.widgets;
+package org.eclipse.scout.boot.ui.commons.widgets;
 
 public interface BrowserFieldBorderless {
 	String BROWSER_FIELD_CSS_CLASS = "browser-field-borderless";

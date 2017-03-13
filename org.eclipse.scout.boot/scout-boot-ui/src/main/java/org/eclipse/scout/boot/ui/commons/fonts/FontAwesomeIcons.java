@@ -1,4 +1,4 @@
-package org.eclipse.scout.boot.ui.fonts;
+package org.eclipse.scout.boot.ui.commons.fonts;
 
 import org.eclipse.scout.rt.shared.AbstractIcons;
 

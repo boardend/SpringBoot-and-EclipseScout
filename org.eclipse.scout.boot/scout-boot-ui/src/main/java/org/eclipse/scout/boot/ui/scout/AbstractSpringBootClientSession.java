@@ -1,4 +1,4 @@
-package org.eclipse.scout.boot.ui;
+package org.eclipse.scout.boot.ui.scout;
 
 import org.eclipse.scout.rt.client.AbstractClientSession;
 import org.eclipse.scout.rt.client.IClientSession;

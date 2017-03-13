@@ -1,4 +1,4 @@
-package org.eclipse.scout.boot.ui;
+package org.eclipse.scout.boot.ui.scout;
 
 import javax.inject.Inject;
 

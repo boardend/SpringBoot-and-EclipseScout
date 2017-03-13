@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import org.eclipse.scout.boot.tasks.commons.model.User;
 import org.eclipse.scout.boot.tasks.commons.model.service.UserService;
-import org.eclipse.scout.boot.ui.AbstractSpringBootClientSession;
+import org.eclipse.scout.boot.ui.scout.AbstractSpringBootClientSession;
 import org.eclipse.scout.rt.client.IClientSession;
 import org.eclipse.scout.rt.client.session.ClientSessionProvider;
 import org.eclipse.scout.rt.platform.BEANS;
