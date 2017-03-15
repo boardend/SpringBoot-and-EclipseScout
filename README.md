@@ -86,17 +86,14 @@ This will yield the following:
 * Spring and Scout integration
 * Business logic
 * Persistences for tasks, users and roles
-* Authorization and authentication (for UI)
 * User interface for tasks and admin
-* REST API (readonly, no authentication so far)
-* Add authentication for REST services
-* Add tests and Travis CI
-* Dockerize application with multi-container setup: Data, DB, Application
-* Use PostgreSQL for realistic setup
+* REST API (readonly so far)
+* Authorization and authentication by Spring Security
+* Dockerized application with multi-container setup: Data, DB, Application
+* Minimal Maven archetype based on this application
 
 ## Roadmap
-* Create Maven archetype based on this application
-* Add user signup functionaliy (+ password reset by email)
+* Add OAuth2 authentification
 
 View [README](org.eclipse.scout.springboot/README.md) for more information
 
