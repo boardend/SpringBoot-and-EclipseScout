@@ -6,6 +6,7 @@ import org.eclipse.scout.rt.platform.BEANS;
 import org.eclipse.scout.rt.platform.Order;
 import org.eclipse.scout.rt.platform.PlatformStateLatch;
 import org.eclipse.scout.rt.platform.Replace;
+import org.eclipse.scout.rt.platform.config.ConfigUtility;
 import org.eclipse.scout.rt.platform.interceptor.IBeanDecorator;
 import org.eclipse.scout.rt.platform.internal.BeanManagerImplementor;
 import org.eclipse.scout.rt.platform.internal.PlatformImplementor;
@@ -45,6 +46,10 @@ public class ScoutBootPlatform extends PlatformImplementor implements Applicatio
     Assertions.assertFalse(isPlatformStarted());
     this.springApplicationContext = context;
     this.springApplicationContext.addApplicationListener(this);
+    
+    //TODO [msm] ask MZI if this is a good solution
+    System.setProperty(ConfigUtility.CONFIG_FILE_NAME, "application.properties");
+    
     super.start(null);
   }
 
