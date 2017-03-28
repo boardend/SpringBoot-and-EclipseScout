@@ -2,6 +2,25 @@
 
 **Please Note**: This is work in progress and has not (yet) been tested for productive usage.
 
+## Archetype
+
+How to create a minimal Scout Boot application:
+<pre>
+mvn archetype:generate \   
+-DarchetypeGroupId=org.eclipse.scout.boot \
+-DarchetypeArtifactId=scout-boot-archetype-minimal \
+-DarchetypeVersion=6.1.0-SNAPSHOT \
+-DgroupId=scout.boot.example \
+-DartifactId=minimal
+
+cd minimal
+
+mvn install eclipse:eclipse
+java -jar target/minimal-\*.jar
+
+mvn clean install docker:build
+docker run -p 8080:8080 scout.boot.example:minimal</pre>
+
 ## Application Description
 Minimal but fully functioning business application
 * Business use case: Task management
@@ -9,19 +28,19 @@ Minimal but fully functioning business application
 * Interfaces: Both UI and REST API
 
 ### Application Login
-When running from within Eclipse, open your browser at [localhost](http://localhost:8080). The login dialog then appears as shown below. You may use root/eclipse as login/password for the development environment. The other default users are alice/test and bob/test. 
+When running from within Eclipse, open your browser at [localhost](http://localhost:8080). The login dialog then appears as shown below. You may use root/eclipse as login/password for the development environment. The other default users are alice/test and bob/test.
 
 ![Login Screen](/screenshots/console_login_form.png)
 
 ### Task Management
 
-In the **Tasks** outline you may add new tasks and/or edit existing tasks. Mandatory fields for tasks are title, responsible and due date. When tasks 
+In the **Tasks** outline you may add new tasks and/or edit existing tasks. Mandatory fields for tasks are title, responsible and due date. When tasks
 
 ![Add a new Task](/screenshots/ui_new_task.png)
 
 ### User and Role Management
 
-Users that have the **root** role assigned may manage roles and users in the **Administration** outline. Editing a user is shown in the screenshot below. 
+Users that have the **root** role assigned may manage roles and users in the **Administration** outline. Editing a user is shown in the screenshot below.
 
 ![Edit a User](/screenshots/ui_edit_user.png)
 
@@ -96,4 +115,3 @@ This will yield the following:
 * Add OAuth2 authentification
 
 View [README](org.eclipse.scout.springboot/README.md) for more information
-
